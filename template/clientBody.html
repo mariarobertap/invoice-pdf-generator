@@ -1,0 +1,26 @@
+<tr class="information">
+    <td colspan="2">
+        <table >
+            <tr>
+                <td>
+                    <b>Cliente:</b>{{.ClienteName}}<br />
+                    <b>Endereço:</b> {{.Endereco}}.<br />
+                    <b>Bairro:</b>{{.Bairro}}.<br />
+                    <b>Cidade:</b>{{.Cidade}}.<br />
+                    <b>Telefone:</b>{{.Telefone}}<br />
+                </td>
+                <td>
+                    Nota #: {{.NotaID}}<br />
+                    Criada: {{.CreatedAt}}<br />
+                    Vencimento: {{.Due}}<br />
+                    <input type="checkbox" id="scales" name="Pedido" {{.StatusPedido}}>
+                    <label for="scales">Pedido</label>
+                    <input type="checkbox" id="scales" name="Orçamento" {{.StatusOrcamento}}>
+                    <label for="scales">Orçamento</label>							
+                </td>
+            </tr>
+            <div class="line-3">
+                <hr>
+            </div>
+        </table>
+    </td>

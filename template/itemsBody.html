@@ -1,0 +1,26 @@
+<table>
+
+    <tr class="heading">
+        <td>Quantidade</td>
+        <td id="testando2">Item</td>
+        <td Id="testando2">Preço Unitário</td>
+        <td>Preço Total</td>
+    </tr>
+	{{range .Items}}
+    <tr class="item">
+        <td>1</td>
+        <td id="testando2">{{.Name}}</td>
+        <td Id="testando2">R${{.ValueUnity}}</td>
+        <td>R${{.ValueTotal}}</td>
+    </tr>
+	{{end}}
+    <tr class="total">
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>Total: R${{.ItemsTotal}}</td>
+    </tr>
+</table>
+</div>
+</body>
+</html>
