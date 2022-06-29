@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"log"
 
 	"github.com/mariarobertap/invoice-pdf-generator/models"
@@ -43,6 +44,8 @@ var (
 
 func main() {
 
+	wk := service.NewWkHtmlToPDF("tmp")
+
 	utils.CreateHtmlFile()
 	file, err := utils.GetFile()
 	defer file.Close()
@@ -56,5 +59,9 @@ func main() {
 	fileService.LoadHtmlFile("./template/clientBody.html", invoice)
 	fileService.LoadHtmlFile("./template/paymentBody.html", payment)
 	fileService.LoadHtmlFile("./template/itemsBody.html", final)
+
+	filePDFName, err := wk.Create("./file/invoice_2022.html")
+
+	fmt.Println("PDF gerado", filePDFName)
 
 }
